@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 /*
 play this: https://www.youtube.com/watch?v=d-diB65scQU
 
@@ -13,11 +15,9 @@ I need this code, but don't know where, perhaps should make some middleware, don
 Go code!
 */
 
-require('dotenv').config()
-
 const server = require('./server')
 
-const port = process.env.PORT
+const port = process.env.PORT || 8000
 
 server.listen(port, () => {
     console.log(`Up and running on ${port}!`)
