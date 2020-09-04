@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
     })
 })
 
-router.put('/:id', (req, res) => {
+router.put('/:id', actionIdValidation, (req, res) => {
     Actions.update(req.params.id, req.body)
     .then(thenRes => {
         res.status(200).json(thenRes)
@@ -38,7 +38,7 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', actionIdValidation, (req, res) => {
     Actions.remove(req.params.id)
     .then(thenRes => {
         res.status(200).send("Action successfully deleted.")
